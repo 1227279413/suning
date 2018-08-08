@@ -2,7 +2,7 @@
 * @Author: lihui
 * @Date:   2018-02-03 17:59:54
 * @Last Modified by:   lihui
-* @Last Modified time: 2018-07-10 12:35:49
+* @Last Modified time: 2018-07-24 09:37:38
 */
 @font-face {
   font-family: 'iconfont';  /* project id 563324 */
@@ -258,6 +258,7 @@
 	border: 0;
 	color: #CECECE;
 	line-height: 36px;
+	outline: none;
 }
 .search{
 	width: 380px;
@@ -267,6 +268,7 @@
 	border: 0;
 	color: #CECECE;
 	line-height: 18px;
+	outline: none;
 }
 .nav_sou3{
 	background-color: #FF8800;
@@ -344,6 +346,23 @@
 	font-size: 15px;
 	float: left;
 	color: #000;
+	position: relative;
+
+}
+.navb_wenzi h1 li{
+	width: 25px;
+	height: 8px;
+	position: absolute;
+	right:0;
+	left: 0;
+	margin:0 auto;
+	bottom:-8px;
+	background-image: url("../image/logo_foot.png");
+	background-position: -37px 0;
+	transition: all .5s linear;
+}
+.navb_wenzi h1:hover li{
+	transform: translate(0, -8px);
 }
 .navb_img{
 	float: right;
@@ -638,7 +657,7 @@
 	position: absolute;
 	bottom: 40px;
 	left: 280px;
-
+	z-index: 40;
 }
 .banner_xiaodian{
 	width: 16px;
@@ -649,17 +668,11 @@
 	float: left;
 	cursor:pointer;
 }
-.banner_dian:hover .banner_1{
-	background-color: #E2C6C6;
-}
+/*.banner_dian:hover .banner_1{*/
+	/*background-color: #E2C6C6;*/
+/*}*/
 .banner_1{
 	background-color: #D18B02;
-	width: 16px;
-	height: 16px;
-	border-radius: 50%;
-	margin-left:15px;
-	float: left;
-	cursor:pointer;
 }
 .banner_nav span{
 	float:left; 
@@ -897,9 +910,9 @@
 .xiaobox2:hover h3{
 	color: #FF7D00;
 }
-.banner_xiaodian:hover{
+/* .banner_xiaodian:hover{
 	background-color: #D18B02;
-}
+} */
 
 
 .neirong{
@@ -988,16 +1001,31 @@
 	width: 1190px;
 	height: 260px;
 	margin: 0 auto;
-	background-color: #fff;
-	float: left;
-}
-.juhui_abox{
-	width: 1000px;
-	height: 240px;
 	padding-top: 20px;
 	background-color: #fff;
-	position: relative;
 	float: left;
+	position: relative;
+}
+
+.juhui_abox1{
+	width: 1000px;
+	height: 240px;
+	position: absolute;
+	left:0;
+	overflow: hidden;
+	margin:0 auto;
+}
+
+.juhui_abox{
+	width: 2000px;
+	height: 240px;
+	/*padding-top: 20px;*/
+	/*margin-top:20px;*/
+	background-color: #fff;
+	position: absolute;
+	left: 0;
+	top:0;
+	transition: all .5s linear;
 }
 .juhui_img{
 	width: 160px;
@@ -1084,7 +1112,9 @@
 	cursor: pointer;
 }
 .juhui_leftbox{
-	float: left;
+	position: absolute;
+	right:0;
+	top:0;
 }
 .juhui_jiantou{
 	width: 40px;
@@ -1105,7 +1135,7 @@
 .juhui_jian{
 	right:0;
 }
-.juhui_abox:hover .juhui_jiantou{
+.juhui_abox1:hover .juhui_jiantou{
 	opacity: 0.8;
 }
 .juhui_jiantou:hover{
