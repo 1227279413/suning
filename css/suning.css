@@ -12,6 +12,39 @@
   url('https://at.alicdn.com/t/font_563324_qqbzs2pgs2hdunmi.ttf') format('truetype'),
   url('https://at.alicdn.com/t/font_563324_qqbzs2pgs2hdunmi.svg#iconfont') format('svg');
 }
+
+
+
+
+#da ul{
+	width: 70px;
+	height: 320px;
+	position: fixed;
+	top:0;
+	bottom:0;
+	left:50%;
+	margin:auto 0 auto -670px;
+	background: #fff;
+	z-index: 30	;
+	border: 1px solid #E8E8E8;
+	display: none;
+}
+#da li{
+	width: 100%;
+	height: 31px;
+	text-align: center;
+	border-bottom: 1px solid #E8E8E8;
+	font-size: 12px;
+	line-height: 31px;
+	cursor: pointer;
+}
+#da .l{
+	background: #FF9900;
+	color:#fff;
+}
+
+
+
 .top{
 	width: 100%;
 	height: 36px;
@@ -372,6 +405,14 @@
 	height: 38px;
 	cursor: pointer;	
 }
+
+
+
+header{
+	width: 100%;
+	height: 440px;
+	background: #28150F;
+}
 #banner_box{
 	width: 1190px;
 	height: 440px;
@@ -723,7 +764,7 @@
 	top: 0;
 	bottom: 0;
 	margin: auto;
-	/* background-color: red; */
+	background-color: #fff;
 	right: 0;
 	border-top: 5px solid #F2F2F2;
 	border-bottom: 5px solid #F2F2F2;
@@ -929,7 +970,7 @@
 	width: 1190px;
 	height: 400px;
 	margin: 0 auto;
-	background-color: red;
+	/*background-color: red;*/
 }
 .su_xiao{
 	width: 230px;

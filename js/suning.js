@@ -35,6 +35,9 @@
             topcarbox.style.display="none";
         }
 
+
+
+
         //banner图动态效果实现
     let bannerImg=banner.getElementsByClassName("banner_img")[0]
     let bannerli=bannerImg.getElementsByTagName("li")
@@ -42,6 +45,7 @@
     let bannerr=banner.getElementsByClassName("banner_rbtn")[0]
     let bannerbox=banner.getElementsByClassName("banner_dian")[0]
     let bannerol=bannerbox.getElementsByTagName("ol")
+    let header1=document.querySelector("header")
         let num=0;
         let clear=setInterval(move,2000)
 
@@ -61,13 +65,34 @@
 
         function move() {
             num++;
+
             if(num==bannerli.length){
                 num=0;
+            }
+            if(num==0){
+                header1.style.backgroundColor="#28150F"
+            }
+            if(num==1){
+                header1.style.backgroundColor="#A21818"
+            }
+            if(num==2){
+                header1.style.backgroundColor="#D9180F"
+            }
+            if(num==3){
+                header1.style.backgroundColor="#6930F1"
+            }
+            if(num==4){
+                header1.style.backgroundColor="#D90708"
+            }
+            if(num==5){
+                header1.style.backgroundColor="#DAD8D9"
+            }
+            if(num==6){
+                header1.style.backgroundColor="#9C0CF0"
             }
             for(let i=0;i<bannerli.length;i++){
                 bannerli[i].style.zIndex="5"
                 bannerol[i].className="banner_xiaodian"
-
             }
             bannerli[num].style.zIndex="10"
             bannerol[num].className="banner_xiaodian banner_1"
@@ -79,12 +104,35 @@
             if(num<0){
                 num=bannerli.length-1;
             }
+            if(num==0){
+                header1.style.backgroundColor="#28150F"
+            }
+            if(num==1){
+                header1.style.backgroundColor="#A21818"
+            }
+            if(num==2){
+                header1.style.backgroundColor="#D9180F"
+            }
+            if(num==3){
+                header1.style.backgroundColor="#6930F1"
+            }
+            if(num==4){
+                header1.style.backgroundColor="#D90708"
+            }
+            if(num==5){
+                header1.style.backgroundColor="#DAD8D9"
+            }
+            if(num==6){
+                header1.style.backgroundColor="#9C0CF0"
+            }
             for(let i=0;i<bannerli.length;i++){
                 bannerli[i].style.zIndex="5"
                 bannerol[i].className="banner_xiaodian"
             }
             bannerli[num].style.zIndex="10"
             bannerol[num].className="banner_xiaodian banner_1"
+
+
         }
     //小点
         for(let j=0;j<bannerol.length;j++){
@@ -95,7 +143,27 @@
                 bannerli[num].style.zIndex="5"
                 bannerol[j].className="banner_xiaodian banner_1"
                 num = j;
-
+                if(num==0){
+                    header1.style.backgroundColor="#28150F"
+                }
+                if(num==1){
+                    header1.style.backgroundColor="#A21818"
+                }
+                if(num==2){
+                    header1.style.backgroundColor="#D9180F"
+                }
+                if(num==3){
+                    header1.style.backgroundColor="#6930F1"
+                }
+                if(num==4){
+                    header1.style.backgroundColor="#D90708"
+                }
+                if(num==5){
+                    header1.style.backgroundColor="#DAD8D9"
+                }
+                if(num==6){
+                    header1.style.backgroundColor="#9C0CF0"
+                }
             }
         }
 
@@ -107,17 +175,64 @@
     let hou=0;
 
 
-    juhuileft.onclick=function () {
+    juhuiright.onclick=function () {
         hou++
         if(hou>=1){
             hou=1;
         }
         juhuia.style.transform=`translateX(${-a*hou}px)`;
     }
-    juhuiright.onclick=function () {
+    juhuileft.onclick=function () {
         hou--
         if(hou<=0){
             hou=0;
         }
         juhuia.style.transform=`translateX(${-a*hou}px)`;
     }
+
+
+
+
+
+    let arr=jQuery(".da").map(function () {
+        return  Math.floor($(this).offset().top+100);
+    })
+    arr=arr.toArray();
+    console.log(arr);
+
+    console.log($("#da ul"));
+
+    $(window).scroll(function () {
+        let top=Math.floor($(this).scrollTop())
+        top>=500?$("#da ul").slideDown():$("#da ul").fadeOut();
+
+        let index=arr.findIndex((item)=>item>top)
+
+        if(index>=0){
+            $("#da li")
+                .removeClass("l")
+                .eq(index)
+                .addClass("l")
+        }
+
+
+    })
+
+    $("#da li").click(function () {
+        let index =$(this).index()
+
+        $(this)
+            .removeClass("l")
+            .eq(index)
+            .addClass("l")
+        $("html")
+            .finish()
+            .animate({scrollTop:arr[index]-100} )
+    })
+    $("#da li").eq(10).click(function () {
+        $("html")
+            .finish()
+            .animate({scrollTop:0} )
+    })
+
+
